@@ -5,8 +5,9 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment)
 
-const Anniversary = props => (
-  <div>
+const anniversary = props => (
+  <div class="container">
+    <br/><br/>
     <Calendar
       localizer={localizer}
       events={[{
@@ -22,4 +23,4 @@ const Anniversary = props => (
   </div>
 )
 
-export default Anniversary;
+export default anniversary;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { Anniversary, Add, Delete, Modify } from 'pages';
+import { Anniversary, Add, List } from 'pages';
 import Header from 'components/Header'
 
 class App extends Component {
@@ -8,10 +8,9 @@ class App extends Component {
     return (
     <div>
       <Header/>
-      <Route path="/Anniversary" component={Anniversary}/>
-      <Route path="/Add" component={Add}/>
-      <Route path="/Delete" component={Delete}/>
-      <Route path="/Modify" component={Modify}/>
+      <Route path="/anniversary" component={Anniversary}/>
+      <Route path="/add" component={Add}/>
+      <Route path="/list" component={List}/>
     </div>
     )
   }

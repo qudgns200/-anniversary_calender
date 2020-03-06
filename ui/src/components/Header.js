@@ -4,28 +4,40 @@ import "bulma"
 
 
 function Header() {
-    const [onMenu, setOnMenu] = useState("Anniversary");
+    const [onMenu, setOnMenu] = useState("anniversary");
 
     function isActive(e) {
         setOnMenu(e.target.name)
     }
 
     return (
-        <div class="tabs is-toggle is-fullwidth is-large">
-            <ul>
-                <li className={onMenu==="Anniversary"?'is-active':''} onClick={isActive}>
-                    <Link to="/Anniversary" name="Anniversary">Anniversary</Link>
-                </li>
-                <li className={onMenu==="Add"?'is-active':''} onClick={isActive}>
-                    <Link to="/Add" name="Add">Add</Link>
-                </li>
-                <li className={onMenu==="Modify"?'is-active':''} onClick={isActive}>
-                    <Link to="/Modify" name="Modify">Modify</Link>
-                </li>
-                <li className={onMenu==="Delete"?'is-active':''} onClick={isActive}>
-                    <Link to="/Delete" name="Delete">Delete</Link>
-                </li>
-            </ul>
+        <div class="container">
+            <section class="hero is-small is-dark is-bold">
+                <div class="hero-body has-text-centered">
+                    <div class="container">
+                    <h1 class="title">
+                        Anniversary_Calendar
+                    </h1>
+                    <h2 class="subtitle">
+                        by Paul
+                    </h2>
+                    </div>
+                </div>
+            </section>
+
+            <div class="tabs is-toggle is-fullwidth is-large">
+                <ul>
+                    <li className={onMenu==="anniversary"?'is-active':''} onClick={isActive}>
+                        <Link to="/anniversary" name="anniversary">Anniversary</Link>
+                    </li>
+                    <li className={onMenu==="add"?'is-active':''} onClick={isActive}>
+                        <Link to="/add" name="add">Add</Link>
+                    </li>
+                    <li className={onMenu==="list"?'is-active':''} onClick={isActive}>
+                        <Link to="/list" name="list">List</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 };

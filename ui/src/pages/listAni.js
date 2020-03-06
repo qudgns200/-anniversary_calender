@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ModifyAni = () => {
+const listAni = () => {
     return (
         <div>
             <h2>ModifyAni</h2>
@@ -8,4 +8,4 @@ const ModifyAni = () => {
     );
 };
 
-export default ModifyAni;
+export default listAni;
