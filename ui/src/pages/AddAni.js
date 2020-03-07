@@ -37,6 +37,11 @@ function addAni() {
                     </span>
                 </div>
             </div>
+
+            <div class="buttons">
+                <button class="button is-primary">Add</button>
+                <button class="button">Cancel</button>
+            </div>
         </div>
     );
 };
