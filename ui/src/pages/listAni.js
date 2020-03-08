@@ -1,6 +1,6 @@
 import React from 'react';
 
-const listAni = () => {
+function listAni() {
     return (
         <div>
             <h2>ModifyAni</h2>
