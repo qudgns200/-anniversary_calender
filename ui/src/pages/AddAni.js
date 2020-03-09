@@ -1,47 +1,67 @@
 import React from 'react';
 import "bulma"
 
+const selectStyle = {
+    flex: 1,
+    width: "14em"
+}
+
 function addAni() {
+    const d = new Date();
+    const yearList = [];
+
+    for(let i=1950; i<=d.getFullYear(); i++) {
+        yearList.push(<option key={i} value={i}>{i}</option>)
+    }
+
     return (
-        <div class="container">
+        <div className="container">
+            <br/>
             <form>
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">ID</label>
-                        <div class="control">
-                            <input class="input is-large" type="text" placeholder="Text input"/>
-                            <span class="icon is-medium is-left">
-                                    <i class="fas fa-user"></i>
-                            </span>
+                <div className="columns is-one-third">
+                    <div className="column">
+                        <div className="label is-large">Year</div>
+                        <div className="select is-large">
+                            <select style={selectStyle}>
+                                {yearList}
+                            </select>
                         </div>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">Password</label>
-                        <div class="control">
-                            <input class="input is-large" type="text" placeholder="Text input"/>
-                            <span class="icon is-medium is-left">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">Email</label>
-                        <input class="input is-large" type="email" placeholder="Email"/>
-                        <span class="icon is-medium is-left">
-                            <i class="fas fa-envelope"></i>
+                        <span class="icon is-large is-left">
+                            <i class="fas fa-globe"></i>
                         </span>
                     </div>
+                    <div className="column">
+                        <div className="label is-large">Month</div>
+                        <input className="input is-large" type="text" placeholder="Text input"/>
+                    </div>
+                    <div className="column">
+                        <div className="label is-large">Day</div>
+                        <input className="input is-large" type="text" placeholder="Text input"/>
+                    </div>
+                    
                 </div>
 
-                <div class="buttons">
-                    <button class="button is-primary">Add</button>
-                    <button class="button">Cancel</button>
+                <div className="columns  is-one-third">
+                    
+                </div>
+
+                <div className="field">
+                    <span>Day</span>
+                    <div className="control">
+                        <input className="input is-large" type="text" placeholder="Text input"/>
+                    </div>
+                </div>
+
+                <div className="field">
+                    <span>Content</span>
+                    <div className="control">
+                        <input className="input is-large" type="text" placeholder="Text input"/>
+                    </div>
+                </div>
+
+                <div className="buttons">
+                    <button className="button is-primary">Confirm</button>
+                    <button className="button">Cancel</button>
                 </div>
             </form>
         </div>
