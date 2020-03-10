@@ -1,6 +1,6 @@
 import React from 'react';
 
-function listAni() {
+function ListAni() {
     return (
         <div>
             <h2>ModifyAni</h2>
@@ -8,4 +8,4 @@ function listAni() {
     );
 };
 
-export default listAni;
+export default ListAni;

@@ -8,9 +8,9 @@ class App extends Component {
     return (
     <div>
       <Header/>
-      <Route path="/anniversary" component={Anniversary}/>
-      <Route path="/add" component={Add}/>
-      <Route path="/list" component={List}/>
+      <Route path="/Anniversary" component={Anniversary}/>
+      <Route path="/Add" component={Add}/>
+      <Route path="/List" component={List}/>
     </div>
     )
   }

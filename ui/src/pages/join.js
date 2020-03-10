@@ -3,45 +3,45 @@ import "bulma"
 
 function addAni() {
     return (
-        <div class="container">
+        <div className="container">
             <form>
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">ID</label>
-                        <div class="control">
-                            <input class="input is-large" type="text" placeholder="Text input"/>
-                            <span class="icon is-medium is-left">
-                                    <i class="fas fa-user"></i>
+                <div className="field">
+                    <div className="control has-icons-left has-icons-right">
+                        <label className="label">ID</label>
+                        <div className="control">
+                            <input className="input is-large" type="text" placeholder="Text input"/>
+                            <span className="icon is-medium is-left">
+                                    <i className="fas fa-user"></i>
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">Password</label>
-                        <div class="control">
-                            <input class="input is-large" type="text" placeholder="Text input"/>
-                            <span class="icon is-medium is-left">
-                                <i class="fas fa-lock"></i>
+                <div className="field">
+                    <div className="control has-icons-left has-icons-right">
+                        <label className="label">Password</label>
+                        <div className="control">
+                            <input className="input is-large" type="text" placeholder="Text input"/>
+                            <span className="icon is-medium is-left">
+                                <i className="fas fa-lock"></i>
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="field">
-                    <div class="control has-icons-left has-icons-right">
-                        <label class="label">Email</label>
-                        <input class="input is-large" type="email" placeholder="Email"/>
-                        <span class="icon is-medium is-left">
-                            <i class="fas fa-envelope"></i>
+                <div className="field">
+                    <div className="control has-icons-left has-icons-right">
+                        <label className="label">Email</label>
+                        <input className="input is-large" type="email" placeholder="Email"/>
+                        <span className="icon is-medium is-left">
+                            <i className="fas fa-envelope"></i>
                         </span>
                     </div>
                 </div>
 
-                <div class="buttons">
-                    <button class="button is-primary">Add</button>
-                    <button class="button">Cancel</button>
+                <div className="buttons">
+                    <button className="button is-primary">Add</button>
+                    <button className="button">Cancel</button>
                 </div>
             </form>
         </div>
