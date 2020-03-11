@@ -9,17 +9,16 @@ const selectStyle = {
 function AddAni() {
     const yearList = [];
     const monthList = [];
-    const dayList = [];
 
-    const [year, setYear] = useState(0);
-    const [month, setMonth] = useState(0);
+    const [year, setYear] = useState(2020);
+    const [month, setMonth] = useState(1);
     const [day, setDay] = useState(0);
 
     const [list, setList] = useState([])
 
     function calYear() {
         const d = new Date();
-        for(let i=1950; i<=d.getFullYear(); i++) {
+        for(let i=d.getFullYear(); i>=1950; i--) {
             yearList.push(<option key={"y" + i} value={i}>{i}</option>)
         }
     }
@@ -32,6 +31,7 @@ function AddAni() {
 
     function yearHandle(e) {
         setYear(e.target.value)
+        console.log(e.target.value)
     }
 
     function monthHandle(e) {
@@ -42,8 +42,7 @@ function AddAni() {
         setDay(e.target.value)
     }
 
-    function onClickHandle(e) {
-
+    function calDay() {
         // 새로 날짜를 받아오기 전에 초기화
         setList([
             list.splice(0)
@@ -51,9 +50,9 @@ function AddAni() {
 
         // 연월에 따른 날짜 가져오기
         // Date(연, 월, 일) 일 때 
-        // "일" 에다가 0 이하의 숫자를 입력할 시 초기 지정한 월에서
-        // 그 전 월 날짜로 계산
-        const d = new Date(year, month+1, 0);
+        // "일" 에다가 0으로 함수 실행 시
+        // 해당 월의 마지막 날로 계산
+        const d = new Date(year, month, 0);
 
         for(let i=1;i<=d.getDate();i++) {
             setList([
@@ -90,7 +89,7 @@ function AddAni() {
                     <div className="column">
                         <div className="label is-large">Day</div>
                         <div className="select is-large">
-                            <select style={selectStyle} id="day" onClick={onClickHandle} onChange={dayHandle} value={day}>
+                            <select style={selectStyle} id="day" onClick={calDay} onChange={dayHandle} value={day}>
                                 {list.map(op => (
                                     <option key={"d" + op} value={op}>{op}</option>
                                 ))}
@@ -100,15 +99,15 @@ function AddAni() {
                 </div>
 
                 <div className="field">
-                    <span>Content</span>
+                    <div className="label is-large">Content</div>
                     <div className="control">
                         <input className="input is-large" type="text" placeholder="Text input"/>
                     </div>
                 </div>
 
                 <div className="buttons">
-                    <button className="button is-primary">Confirm</button>
-                    <button className="button">Cancel</button>
+                    <button className="button is-primary is-large is-fullwidth">Confirm</button>
+                    <button className="button is-light is-large is-fullwidth">Cancel</button>
                 </div>
             </form>
         </div>
