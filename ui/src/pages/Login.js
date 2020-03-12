@@ -1,7 +1,7 @@
 import React from 'react';
 import "bulma"
 
-function join() {
+function login() {
     return (
         <div className="container">
             <form>
@@ -29,18 +29,8 @@ function join() {
                     </div>
                 </div>
 
-                <div className="field">
-                    <div className="control has-icons-left has-icons-right">
-                        <label className="label">Email</label>
-                        <input className="input is-large" type="email" placeholder="Email"/>
-                        <span className="icon is-medium is-left">
-                            <i className="fas fa-envelope"></i>
-                        </span>
-                    </div>
-                </div>
-
                 <div className="buttons">
-                    <button className="button is-fullwidth is-large is-primary">Join</button>
+                    <button className="button is-fullwidth is-large is-primary">Login</button>
                     <button className="button is-fullwidth is-large">Cancel</button>
                 </div>
             </form>
@@ -48,4 +38,4 @@ function join() {
     );
 };
 
-export default join;
+export default login;
