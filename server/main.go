@@ -1,28 +1,34 @@
 package main
 
-import "github.com/qudgns200/Anniversary_calendar/server/dbtest"
+import (
+	"log"
+	"net/http"
+	"os"
+
+	"github.com/labstack/echo"
+)
 
 func main() {
-	// port := GetPort()
-	// log.Println("[-] Listening on...", port)
+	port := GetPort()
+	log.Println("[-] Listening on...", port)
 
-	// e := echo.New()
-	// e.GET("/", func(c echo.Context) error {
-	// 	return c.String(http.StatusOK, "Hello World!")
-	// })
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello World!")
+	})
 
-	// e.Logger.Fatal(e.Start(port))
+	e.Logger.Fatal(e.Start(port))
 
-	dbtest.Dbtest()
+	// dbtest.Dbtest()
 
 }
 
-// // for push on heroku (Get a port)
-// func GetPort() string {
-// 	port := os.Getenv("PORT")
-// 	if port == "" {
-// 		port = "8080"
-// 		log.Println("[-] No PORT environment variable detected. Setting to ", port)
-// 	}
-// 	return ":" + port
-// }
+// for push on heroku (Get a port)
+func GetPort() string {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Println("[-] No PORT environment variable detected. Setting to ", port)
+	}
+	return ":" + port
+}
