@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/labstack/echo"
+	_ "github.com/labstack/echo"
 )
 
 func main() {
@@ -13,14 +14,14 @@ func main() {
 	log.Println("[-] Listening on...", port)
 
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello World!")
+
+	e.GET("/user/:id", func(c echo.Context) error {
+		id := c.Param("id")
+		u := GetUser(id)
+		return c.JSON(http.StatusOK, u)
 	})
 
 	e.Logger.Fatal(e.Start(port))
-
-	// dbtest.Dbtest()
-
 }
 
 // for push on heroku (Get a port)
