@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"os"
 
+	userapi "github.com/qudgns200/Anniversary_calendar/server/userapi"
+
 	"github.com/labstack/echo"
-	_ "github.com/labstack/echo"
 )
 
 func main() {
@@ -17,14 +18,19 @@ func main() {
 
 	e.GET("/user/:id", func(c echo.Context) error {
 		id := c.Param("id")
-		u := GetUser(id)
+		log.Println(id)
+
+		u := userapi.GetUser(id)
+
+		log.Println(u)
+
 		return c.JSON(http.StatusOK, u)
 	})
 
 	e.Logger.Fatal(e.Start(port))
 }
 
-// for push on heroku (Get a port)
+// GetPort is function which gets PORT
 func GetPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
