@@ -24,7 +24,7 @@ func GetUser(id string) user {
 
 	userInfo := user{}
 
-	var err = conn.QueryRow("select * from user where id=" + id).Scan(&userInfo)
+	var err = conn.QueryRow("select * from user where id="+id).Scan(&userInfo.ID, &userInfo.Password, &userInfo.Email)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
