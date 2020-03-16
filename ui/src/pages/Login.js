@@ -1,5 +1,14 @@
 import React from 'react';
 import "bulma"
+import axios from 'axios';
+
+async function getUser() {
+    console.log("Hello")
+
+    await axios.get('https://anniversary-calendar.herokuapp.com/user/1') 
+    .then(function (response) { console.log(response); }) 
+    .catch(function (error) { });
+}
 
 function login() {
     return (
@@ -30,7 +39,7 @@ function login() {
                 </div>
 
                 <div className="buttons">
-                    <button className="button is-fullwidth is-large is-primary">Login</button>
+                    <button className="button is-fullwidth is-large is-primary" onClick={getUser}>Login</button>
                     <button className="button is-fullwidth is-large">Cancel</button>
                 </div>
             </form>
