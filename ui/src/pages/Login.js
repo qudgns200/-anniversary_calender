@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "bulma"
 import axios from 'axios';
 
-async function getUser() {
-    console.log("Hello")
 
-    await axios.get('https://anniversary-calendar.herokuapp.com/user/1') 
-    .then(function (response) { console.log(response); }) 
-    .catch(function (error) { });
-}
+function Login() {
+    const [id, setId] = useState();
+    const [password, setPassword] = useState();
 
-function login() {
+    function handleOnChange(e) {
+        var t = e.target.name
+
+        if (t === "id") {
+            setId(e.target.value)
+        } else {
+            setPassword(e.target.value)
+        }
+    }
+
+    async function getUser() {
+        console.log("Hello")
+    
+        await axios.get('https://anniversary-calendar.herokuapp.com/user/' + id) 
+        .then(function (response) { console.log(response); }) 
+        .catch(function (error) { });
+    }
+
     return (
         <div className="container">
             <form>
@@ -18,7 +32,7 @@ function login() {
                     <div className="control has-icons-left has-icons-right">
                         <label className="label">ID</label>
                         <div className="control">
-                            <input className="input is-large" type="text" placeholder="Text input"/>
+                            <input className="input is-large" type="text" placeholder="Text input" name="id" value={id} onChange={handleOnChange}/>
                             <span className="icon is-medium is-left">
                                     <i className="fas fa-user"></i>
                             </span>
@@ -30,7 +44,7 @@ function login() {
                     <div className="control has-icons-left has-icons-right">
                         <label className="label">Password</label>
                         <div className="control">
-                            <input className="input is-large" type="text" placeholder="Text input"/>
+                            <input className="input is-large" type="text" placeholder="Text input" name="password" value={password} onChange={handleOnChange}/>
                             <span className="icon is-medium is-left">
                                 <i className="fas fa-lock"></i>
                             </span>
@@ -47,4 +61,4 @@ function login() {
     );
 };
 
-export default login;
+export default Login;
