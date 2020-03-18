@@ -18,8 +18,6 @@ function Login() {
     }
 
     async function getUser() {
-        console.log("Hello")
-    
         await axios.get('https://anniversary-calendar.herokuapp.com/user/' + id) 
         .then(function (response) { console.log(response); }) 
         .catch(function (error) { });
