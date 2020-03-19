@@ -18,8 +18,11 @@ function Login() {
     }
 
     async function getUser() {
+        document.location.href="/Main/Anniversary";
         await axios.get('https://anniversary-calendar.herokuapp.com/user/' + id) 
-        .then(function (response) { console.log(response); }) 
+        .then(function (response) { 
+            document.location.href="/Main/Anniversary";
+        }) 
         .catch(function (error) { });
     }
 
