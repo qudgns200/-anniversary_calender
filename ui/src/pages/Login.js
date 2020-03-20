@@ -3,7 +3,7 @@ import "bulma"
 import axios from 'axios';
 
 
-function Login() {
+function Login(props) {
     const [id, setId] = useState();
     const [password, setPassword] = useState();
 
@@ -17,18 +17,19 @@ function Login() {
         }
     }
 
-    async function getUser() {
-        document.location.href="/Main/Anniversary";
+    async function getUser(e) {
+        e.preventDefault();
+
         await axios.get('https://anniversary-calendar.herokuapp.com/user/' + id) 
         .then(function (response) { 
-            document.location.href="/Main/Anniversary";
+            this.props.history.push("/Main/Anniversary")
         }) 
         .catch(function (error) { });
     }
 
     return (
         <div className="container">
-            <form>
+            <form onSubmit={getUser}>
                 <div className="field">
                     <div className="control has-icons-left has-icons-right">
                         <label className="label">ID</label>
@@ -54,7 +55,7 @@ function Login() {
                 </div>
 
                 <div className="buttons">
-                    <button className="button is-fullwidth is-large is-primary" onClick={getUser}>Login</button>
+                    <button className="button is-fullwidth is-large is-primary">Login</button>
                     <button className="button is-fullwidth is-large">Cancel</button>
                 </div>
             </form>
