@@ -30,6 +30,10 @@ func main() {
 	e.Logger.Fatal(e.Start(port))
 }
 
+func GetUser() {
+
+}
+
 // GetPort is function which gets PORT
 func GetPort() string {
 	port := os.Getenv("PORT")
