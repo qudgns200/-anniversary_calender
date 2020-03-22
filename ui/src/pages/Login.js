@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "bulma"
 import axios from 'axios';
 
@@ -59,6 +60,11 @@ function Login(props) {
                     <button className="button is-fullwidth is-large">Cancel</button>
                 </div>
             </form>
+            <div className="buttons">
+                    <button className="button is-fullwidth is-large is-primary">
+                        <Link to="/Join">Join</Link>
+                    </button>
+                </div>
         </div>
     );
 };
