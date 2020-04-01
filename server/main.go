@@ -16,6 +16,10 @@ func main() {
 
 	e := echo.New()
 
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "HELLO WORLD")
+	})
+
 	e.GET("/user/:id", func(c echo.Context) error {
 		id := c.Param("id")
 		log.Println(id)
